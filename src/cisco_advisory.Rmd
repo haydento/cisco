@@ -79,7 +79,6 @@ class: top, center
 
 .left[
 - Network of researchers who collaboratively use acoustic telemetry
-- Provide information useful to fish managers
 - Framework to share detections
 - https://glatos.glos.us
 ]
@@ -102,9 +101,10 @@ class: top, center
 
 .right-column[
 .left[
-- tagging trials- Government bay
-- can we keep tagged cisco alive?  
-- short duration trial (~2 hrs)
+- can we keep tagged cisco alive?
+- tag size?
+- experimental tagging, Government bay
+- ~2 hrs
 ]
 
 <div class="flex2">
@@ -130,7 +130,7 @@ class: top, center
 
 .right-column[
 .left[
-- pilot (28 receivers, 25 V9 tags)
+- pilot project- 28 receivers, 25 V9 tags
 ]
 
 <div class="flex2">
@@ -155,9 +155,8 @@ class: top, center
 
 .right-column[
 .left[
-- 100 tags total, (goal: 50 tags Hessel, 50 tags Government Bay)
-- tagged 42 Hessel, 7 Government Bay, V9 temperature/pressure
-- November cold snap!
+- 100 tags, goal: 50 tags Hessel, 50 tags Government Bay
+- tagged 42 Hessel, 7 Government Bay, V9 TP
 - 120 receiver array
 ]
 
@@ -182,10 +181,9 @@ class: top, center
 
 .right-column[
 .left[
-- preliminary telemetry data suggested cisco in Government Bay during winter
-- successfully captured cisco under ice (short soak gill nets)
-- tagged 39 cisco, V9 temperature and pressure
-- 120 receiver array
+- cisco overwinter in Government Bay
+- gill nets under ice
+- tagged 39 cisco
 ]
 
 
@@ -217,8 +215,7 @@ class: top, center
 .left[
 - 100 new tags, 12 leftover
 - goal: 56 tags Hessel, 56 tags Government Bay
-- tagged 60 fish Government Bay, 9 fish Hessel (V9 temperature, pressure)
-- 120 receiver array
+- tagged 60 fish Government Bay, 9 fish Hessel
 ]
 
 
@@ -247,22 +244,21 @@ class: top, center
 .right-column[
 .left[
 - goal: 43 tags  Government Bay
-- 120 receiver array until summer 2022
-- summer 2022- new lake-wide receiver grid
-- battery life ~ 1 year
-  ]
-	  ]
+- 120 receiver array through spring 2022
+- summer 2022- lake-wide grid
+]
+]
 
 ---
 
 class: top, center
  
-# objectives
+# Objectives
  
 .left[
  
-- .red[Describe habitat use and estimate proportion of cisco that move to main basin of Lake Huron]
-- .red[Determine timing and spatial extent of post-spawning movements]
+- Describe habitat use and estimate proportion of cisco that move to main basin of Lake Huron
+- Determine timing and spatial extent of post-spawning movements
 - Determine annual survival and spawning site fidelity
 - Determine timing of movement onto spawning grounds
 
@@ -314,9 +310,9 @@ class: top, center
 
 # Conclusions
 .left[
-- Extensive movements, some movements to Lake Huron
+- Extensive movements, movements to Lake Huron in summer/autumn
 - Overwinter in islands
-- Depth range: max depth 30 m
+- Depth range: 0-30 m
   - less than 20 m November to April
   - some greater than 20 m May to October
 - Temperature range: 0-20 C
@@ -331,9 +327,8 @@ class: top, center
 # Future
 
 .left[
-- autumn 2021- tagging scheduled ~45 tags, Government Bay
-- data
-- analyses continue!
+- autumn 2021, ~45 tags, Government Bay
+- stay tuned, analyses continue!
 ]
 
 <center>

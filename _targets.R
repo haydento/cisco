@@ -78,13 +78,12 @@ list(
              make_site_map(recs = prep_recs, background = background_raw, out_pth = "output/rec_map.html"),
              format = "file"
              ),
-  tar_render(pres, path = "src/cisco_advisory.Rmd", output_dir = "output", output_file = "index.html"),
+  tar_render(pres, path = "src/cisco_advisory.Rmd", output_dir = "docs", output_file = "presentation.html"),
 
   tar_target(video,
              make_gif(x = dead_id, recs = prep_recs, location = "glatos_array2", background_ylim = c(41.3, 49), background_xlim = c(-92.45, -75.87), dir_pth = "output/gif"),
              format = "file"
              ),
-
   tar_target(abacus,
              abacus_fig(z = clean_dtc, recs = prep_recs, out_pth = "output/abacus.pdf"),
              format = "file"
