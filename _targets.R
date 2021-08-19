@@ -78,7 +78,7 @@ list(
              make_site_map(recs = prep_recs, background = background_raw, out_pth = "output/rec_map.html"),
              format = "file"
              ),
-  tar_render(pres, path = "src/cisco_advisory.Rmd", output_dir = "docs", output_file = "index.html"),
+  tar_render(pres, path = "docs/cisco_advisory.Rmd", output_dir = "docs", output_file = "index.html"),
 
   tar_target(video,
              make_gif(x = dead_id, recs = prep_recs, location = "glatos_array2", background_ylim = c(41.3, 49), background_xlim = c(-92.45, -75.87), dir_pth = "output/gif"),
