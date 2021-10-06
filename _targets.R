@@ -6,16 +6,24 @@ source("src/functions.R")
 tar_option_set(packages = c("data.table", "glatos", "sf", "raster", "leaflet", "mapview", "sp", "gifski"))
 
 list(
-  tar_target(raw_detections,
-             "~/Documents/Lake_Huron_cisco/data/receivers/vrl_to_csv",
+  tar_target(raw_vrls,
+             "~/Documents/Lake_Huron_cisco/data/receivers/vrl",
              format = "file"
              ),
+  tar_target(convert_vrl,
+             extract_vrl(in_pth = raw_vrls, out_dir = "~/Documents/Lake_Huron_cisco/cisco_analyses/cisco_rpt_2021/data/vrl_to_csv", vdat_pth = "/home/todd/tools"),
+             format = "file"
+             ),
+  #tar_target(raw_detections,
+  #           "~/Documents/Lake_Huron_cisco/data/receivers/vrl_to_csv",
+  #           format = "file"
+  #           ),
   tar_target(project_data,
              "~/Documents/Lake_Huron_cisco/dbase_submission/cisco_dbase.ods",
              format = "file"
              ),
   tar_target(compile_dtc,
-             compile_det(pth = raw_detections),
+             compile_det(pth = convert_vrl),
              format = "fst_dt"
              ),
   tar_target(prep_recs,
@@ -46,6 +54,15 @@ list(
              manual_dead_id(y = clean_dtc),
              format = "fst_dt"
              ),
+  tar_target(month_depth_group,
+             grouped_boxplot_depth(x = dead_id, pth = "output/grouped_boxplot_depth.png"),
+             format = "file"
+             ),
+  tar_target(temp_boxplot_month,
+             temperature_boxplot(x = dead_id, pth = "output/temperature_boxplot.png"),
+             format = "file"
+             ),
+  
   tar_target(daily_mean_depth,
              daily_sensor(x = dead_id, param = "pressure", t_interval = "1 day"),
              format = "fst_dt"
@@ -61,7 +78,7 @@ list(
   tar_target(monthly_temp_plot,
              cisco_depth_plot(x = daily_mean_temp, out_pth = "output/monthly_temp.png", seasonal = FALSE, ylim = c(0,25), ylab = "temperature (C)"),
              format = "file"
-             ),
+             ), 
   tar_target(seasonal_depth_plot,
              cisco_depth_plot(x = daily_mean_depth, out_pth = "output/seasonal_depth.png", seasonal = TRUE),
              format = "file"
@@ -70,6 +87,12 @@ list(
              cisco_depth_plot(x = daily_mean_depth, out_pth = "output/monthly_depth.png", seasonal = FALSE),
              format = "file"
              ),
+
+
+
+
+
+
   tar_target(background_raw,
              "~/Documents/Lake_Huron_cisco/cisco_analyses/cisco_rpt_2021/data/huron_lld.tif",
              format = "file"
