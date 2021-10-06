@@ -9,7 +9,8 @@
 #' dtc <- compile_det(pth = "~/Documents/Lake_Huron_cisco/data/receivers/vrl_to_csv")
 
 compile_det <- function(pth){
-  fls <- list.files(pth, pattern = "*.csv", full.names = TRUE)
+  fls <- pth
+#  fls <- list.files(pth, pattern = "*.csv", full.names = TRUE)
   name_col <- names(fread(cmd = paste("grep -iw DET_DESC", fls[1])))
   int_trans <- paste("grep -iw", "DET", fls)
   trans <- lapply(int_trans, function(x) fread(cmd = x))
@@ -37,8 +38,8 @@ clean_recs <- function(pth){
   set(recs, j = "GLATOS_RECOVER_DATE_TIME", value = as.POSIXct(recs$RECOVER_DATE_TIME, tz = "America/Detroit"))
   set(recs, j = "Serial Number", value = as.numeric(recs$`Serial Number`))
   #recs <- recs[!is.na(RECOVER_DATE_TIME),]
-  recs <- recs[, c("GLATOS_ARRAY", "STATION_NO", "SITE", "GLATOS_DEPLOY_DATE_TIME", "GLATOS_RECOVER_DATE_TIME", "DEPLOY_LAT", "DEPLOY_LONG", "RECEIVER", "INS_SERIAL_NO")]
-  setnames(recs, names(recs), c("glatos_array", "station_no", "site", "glatos_deploy_date_time", "glatos_recover_date_time", "deploy_lat", "deploy_long", "receiver", "receiver_serial_no"))
+  recs <- recs[, c("GLATOS_ARRAY", "STATION_NO", "SITE", "GLATOS_DEPLOY_DATE_TIME", "GLATOS_RECOVER_DATE_TIME", "DEPLOY_LAT", "DEPLOY_LONG", "RECEIVER", "INS_SERIAL_NO", "BOTTOM_DEPTH")]
+  setnames(recs, names(recs), c("glatos_array", "station_no", "site", "glatos_deploy_date_time", "glatos_recover_date_time", "deploy_lat", "deploy_long", "receiver", "receiver_serial_no", "bottom_depth_m"))
   # next line is needed because I have not entered any recovery times from summer 2021 swaps yet.
   # Should not make much difference because likely won't have any detections of fish after receivers were recovered
   # the exception is if a fish was within detection range of boat after receiver was recovered and detected through the boat.
@@ -110,7 +111,8 @@ add_locs_tags <- function(det, recs, tagging){
                     deploy_lat = x.deploy_lat,
                     deploy_long = x.deploy_long,
                     receiver = x.receiver,
-                    receiver_serial_no = x.receiver_serial_no),
+                    receiver_serial_no = x.receiver_serial_no,
+                    bottom_depth_m = x.bottom_depth_m),
              on = .(receiver_serial_no = rec_serial_no, glatos_deploy_date_time <= detection_timestamp_utc, glatos_recover_date_time >= detection_timestamp_utc), nomatch = NULL]
 
   out <- tg[foo, .(animal_id = x.ANIMAL_ID,
@@ -157,7 +159,8 @@ add_locs_tags <- function(det, recs, tagging){
                    deploy_lat = i.deploy_lat,
                    deploy_long = i.deploy_long,
                    receiver = i.receiver,
-                   receiver_serial_no = i.receiver_serial_no),
+                   receiver_serial_no = i.receiver_serial_no,
+                   bottom_depth_m = i.bottom_depth_m),
             on = .(TRANSMITTER = full_transmitter_id), nomatch = NULL]
 
   out[is.na(sensor_value), c("sensor_type", "sensor_units", "sensor_slope", "sensor_intercept") := list(NA, NA, NA, NA)]
@@ -359,7 +362,7 @@ daily_sensor <- function(x, param = "pressure", t_interval = "1 day") {
   tseq <- seq(rng_start, rng_end, by = t_interval)
 
   y[, bin := tseq[findInterval(detection_timestamp_utc, tseq)]]
-  out <- y[, .(mean_daily_depth = mean(sensor_real_value), num_daily_dtc = .N), by = .(bin, animal_id)]
+  out <- y[, .(mean_daily_depth = mean(sensor_real_value), num_daily_dtc = .N, mean_daily_bottom_depth_m = mean(bottom_depth_m, na.rm = TRUE)), by = .(bin, animal_id)]
  
   out[, month := as.numeric(format(bin, "%m"))][] 
   return(out)
@@ -376,7 +379,7 @@ daily_sensor <- function(x, param = "pressure", t_interval = "1 day") {
 #' seasonal = TRUE
 #' out_pth <- "output/seasonal.png"
 #' cisco_depth_plot(x, out_pth, seasonal = TRUE)
-cisco_depth_plot <- function(x, out_pth, seasonal = TRUE, ylim = c(30,0), ylab = "depth (m)"){
+cisco_depth_plot <- function(x, out_pth, seasonal = TRUE, ylim = c(30,0), ylab = "depth (m)", bottom_depth = FALSE){
   
   x[month %in% c(6,7,8), season := "summer"]
   x[month %in% c(9,10,11), season := "autumn"]
@@ -401,6 +404,71 @@ cisco_depth_plot <- function(x, out_pth, seasonal = TRUE, ylim = c(30,0), ylab =
 
 }
 
+#' @title water and fish depth grouped boxplot
+#' @description plots fish depth and water depth boxplots by month.
+#' @param x detection object
+#' @param pth output path for saving file
+#' @examples
+#' tar_load("dead_id")
+#' x <- dead_id
+#' pth <- "output/grouped_boxplot_depth.png"
+#' grouped_boxplot_depth(x = dead_id, pth = "output/grouped_boxplot_depth.png")
+
+grouped_boxplot_depth <- function(x = dead_id, pth){
+  #foo <- detection_events(x, location_col = "glatos_array2", time_sep = Inf, condense = FALSE)
+  #foo <- foo[arrive == 1,]
+  x[, month := as.numeric(format(detection_timestamp_utc, "%m"))]
+  x[, month_f := factor(month, levels = as.character(1:12))]
+  x <- x[!is.na(sensor_real_value), c("month", "month_f", "sensor_real_value", "sensor_type", "bottom_depth_m")]
+  x <- melt(x, id.vars = c("month", "month_f", "sensor_type"), measure.vars = c("sensor_real_value", "bottom_depth_m"))
+  bar <- x[sensor_type == "P",]
+
+  bar[, id := paste(month, variable, sep = "_")]
+  bar[, id_f := factor(id, levels = c("1_sensor_real_value", "1_bottom_depth_m", "2_sensor_real_value", "2_bottom_depth_m", "3_sensor_real_value", "3_bottom_depth_m", "4_sensor_real_value", "4_bottom_depth_m", "5_sensor_real_value", "5_bottom_depth_m", "6_sensor_real_value", "6_bottom_depth_m", "7_sensor_real_value", "7_bottom_depth_m", "8_sensor_real_value", "8_bottom_depth_m", "9_sensor_real_value", "9_bottom_depth_m", "10_sensor_real_value", "10_bottom_depth_m", "11_sensor_real_value", "11_bottom_depth_m", "12_sensor_real_value", "12_bottom_depth_m"))] 
+
+
+  cols <- rainbow(2, s=0.5)
+  nam <- rep(c("J","F","M","A","M","J","J","A","S","O","N","D"), each = 2)
+
+  png(filename = pth)
+  boxplot(value ~ id_f, data = bar, ylim = c(70,0), col = cols, pch = 16, xlab = "month", ylab = "depth (m)", xaxs = FALSE, las =1, names = nam, at = c(1:2, 4:5, 7:8, 10:11, 13:14, 16:17, 19:20, 22:23, 25:26, 28:29, 31:32, 34:35), outline = FALSE)
+  legend("bottomright", fill = cols, legend = c("fish depth", "water depth"))
+  dev.off()
+  return(pth)
+}
+
+
+  #####################
+#' @title temperature boxplot by month
+#' @description plots fish experienced temperature by month.
+#' @param x detection object
+#' @param pth output path for saving file
+#' @examples
+#' tar_load("dead_id")
+#' pth <- "output/fish_experienced_temperature.png"
+#' x <- dead_id
+#' temperature_boxplot(x = dead_id, pth = "output/fish_experienced_temperature.png")
+
+temperature_boxplot <- function(x = dead_id, pth){
+
+  ## foo <- detection_events(x, location_col = "glatos_array2", time_sep = Inf, condense = FALSE)
+  ## foo <- foo[arrive == 1,]
+  x[, month := as.numeric(format(detection_timestamp_utc, "%m"))]
+  x[, month_f := factor(month, levels = as.character(1:12))]
+  x <- x[!is.na(sensor_real_value), c("month", "month_f", "sensor_real_value", "sensor_type", "bottom_depth_m")]
+  x <- x[sensor_type == "T",]
+
+  cols <- rainbow(2, s=0.5)
+  nam <- c("J","F","M","A","M","J","J","A","S","O","N","D")
+
+  png(filename = pth)
+  boxplot(sensor_real_value ~ month_f, data = x, ylim = c(0, 25), col = cols[1], pch = 16, xlab = "month", ylab = "temperature (m)", xaxs = FALSE, las =1, names = nam, at = 1:12, outline = FALSE)
+  legend("topleft", fill = cols, legend = c("fish temperature"))
+  dev.off()
+  return(pth)
+}
+
+##############################
   
 #' @examples
 #' tar_load(prep_recs)
@@ -739,4 +807,45 @@ abacus_fig <- function(z, recs, out_pth = "output/abacus.pdf"){
   dev.off()
   return(out_pth)  
 }
+
+#####################
+
+
+#' @title extract vrls
+#' @description function opens and creates csv files from each vrl file
+#' @param in_pth path to directory that contains raw vrl files
+#' @param out_dir  path to directory where extracted vrl files will be written as .csv files
+#' @param vdat_pth  pth to directory that contains vdat command line program
+#' @examples
+#' extract_vrl(in_pth = "~/Desktop/lost_AR_data/vrl", out_dir = "~/Desktop/vrl_to_csv", vdat_pth = "/home/todd/tools")
+#' in_pth = "~/Desktop/lost_AR_data/vrl"
+#' out_dir = "~/Desktop/vrl_to_csv"
+#' vdat_pth = "/home/todd/tools"
+
+extract_vrl <- function(in_pth, out_dir, vdat_pth){
+  tdir <- tempdir()
+  tdir_arg <- sprintf("--output=%s", tdir)
+  
+  fls <- list.files(path = in_pth, pattern="*.vrl", full.names = TRUE)
+  fls_arg <- paste(shQuote(fls), collapse= " ")
+   
+  vdat_pth <- file.path(path.expand(vdat_pth), "vdat")
+
+  out_dir <- path.expand(out_dir)
+  out_names <- sub(".vrl$", ".csv", x = basename(fls))
+  temp_out <- file.path(tdir, out_names)
+  final_files <- file.path(out_dir, out_names)
+
+  system2(vdat_pth, c("convert", "--format=csv.fathom", "--timec=default", tdir_arg, fls_arg))
+
+  file.copy(temp_out, out_dir, overwrite = TRUE)
+  file.remove(temp_out)
+  
+  return(final_files)
+}
+
+
+
+
+ 
 
