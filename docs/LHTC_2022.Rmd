@@ -178,7 +178,6 @@ class: top, center
 - Depth experienced: 0-30 m, median 7-11 m
   - fish suspended during summer (movement offshore)
 - Temperature range (median 0-20 C)
-- Analyses ongoing!
 - Cailin Burnmaster (U Windsor)- MS project
 
 ]
