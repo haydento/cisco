@@ -87,12 +87,6 @@ list(
              cisco_depth_plot(x = daily_mean_depth, out_pth = "output/monthly_depth.png", seasonal = FALSE),
              format = "file"
              ),
-
-
-
-
-
-
   tar_target(background_raw,
              "~/Documents/Lake_Huron_cisco/cisco_analyses/cisco_rpt_2021/data/huron_lld.tif",
              format = "file"
@@ -110,7 +104,11 @@ list(
   tar_target(abacus,
              abacus_fig(z = clean_dtc, recs = prep_recs, out_pth = "output/abacus.pdf"),
              format = "file"
-             )
+             ),
+
+  tar_render(LHTC_pres_2022, path = "docs/LHTC_2022.Rmd", output_dir = "docs", output_file = "LHTC_winter_2022.html")
+
+  
 )
 
 
