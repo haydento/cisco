@@ -173,20 +173,18 @@ class: top, center
 
 # Conclusions
 .left[
-- Extensive movements, movements to Lake Huron in summer/autumn
+- Extensive movements, main basin- summer/autumn
 - Overwinter in islands
-- Depth experienced: 0-30 m, median depth 7-11 m
-  - less than 20 m November to April
-  - some greater than 20 m May to October
-  - water depth at receiver: 0-60 m
+- Depth experienced: 0-30 m, median 7-11 m
   - fish suspended during summer (movement offshore)
-- Temperature range: 0-20 C
-
+- Temperature range (median 0-20 C)
 - Analyses ongoing!
+- Cailin Burnmaster (U Windsor)- MS project
+
 ]
 
 <center>
-<img src="../docs/cisco_sampling_20171114_180542.jpg", width="18%" height="18%"/>
+<img src="../docs/cisco_sampling_20171114_180542.jpg", width="30%" height="30%"/>
 </center>
 
 ---
@@ -228,7 +226,9 @@ class: top, center
   - V5-180kHz tags fit (fish ~140 mm TL)
 - 2021 GLFC Pilot Project ~$20K
   - 60 receiver array in Saginaw Bay
-  - 26 V5D-180 kHz tags (12.7 mm L x 5.7 mm D, 0.64 g in air)
+  - 26 V5D-180 kHz tags (13 mm L x 6 mm D, 0.64 g)
+  - Tags broadcast ~110 seconds, battery life ~139 days
+
 ]
 
 # Objectives
@@ -247,14 +247,12 @@ class: top, center
 
 ## Tagging 
 - September 20, 2021, Jordan River National Fish Hatchery (N = 26, 150-175 mm TL )
-- Post-tagging- hatchery until October 9, 2021
-- Fish released in Saginaw Bay- Evening of October 9, 2021
+- Fish released in Saginaw Bay- October 9, 2021
 - "Predation" tags- detect and count time since eaten by predator
-- Tags random delay between transmissions-  70-110 seconds, battery life ~139 days
 
 ## Receiver deployment
-- 60 Vemco VR2W-180 receivers (September 2021)
-- Water depth- 0- ~15 m
+- 60 Vemco VR2W-180 receivers (September-December 2021)
+- Water depth- 1 to ~15 m
 - 500 m receiver spacing
 ]
 
@@ -278,7 +276,7 @@ class: top, center
 ---
 class: top, center
 
-# Juvenile timing
+# Juvenile cisco detections and predation
 
 .center[<img src="../output/cum_dtc_pred.png" width="75%" height="75%"/>]
 
@@ -287,11 +285,11 @@ class: top, center
 
 # Conclusions
 .left[
-- Extensive movements, rapid dispersal
-- 7 known predation events (out of 26 fish)
-- Most left array after 5-6 days
-	- receiver array active October - December
-- False negative predation events?
+- Rapid dispersal
+- 7 known predation events (out of 26 fish, survival 73%, 15 days)
+- Most left array after 5-6 days (October 15)
+	- Receiver array active October - December
+    - False negative predation events?
 - 100% survived tagging, transport, release
 - Analyses ongoing, Next step?
 ]
