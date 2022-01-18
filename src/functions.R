@@ -462,7 +462,7 @@ temperature_boxplot <- function(x = dead_id, pth){
   nam <- c("J","F","M","A","M","J","J","A","S","O","N","D")
 
   png(filename = pth)
-  boxplot(sensor_real_value ~ month_f, data = x, ylim = c(0, 25), col = cols[1], pch = 16, xlab = "month", ylab = "temperature (m)", xaxs = FALSE, las =1, names = nam, at = 1:12, outline = FALSE)
+  boxplot(sensor_real_value ~ month_f, data = x, ylim = c(0, 25), col = cols[1], pch = 16, xlab = "month", ylab = "temperature (C)", xaxs = FALSE, las =1, names = nam, at = 1:12, outline = FALSE)
   legend("topleft", fill = cols, legend = c("fish temperature"))
   dev.off()
   return(pth)
