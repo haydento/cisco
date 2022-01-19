@@ -107,7 +107,7 @@ class: top, center
 .left[
 <video width="570" height="470" autoplay loop muted>
 		<source src="../docs/tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
-		<source src="docs/tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
+		<source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
 	</video>
 ]
 ]
