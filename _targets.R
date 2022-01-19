@@ -3,7 +3,7 @@ library(tarchetypes)
 
 source("src/functions.R")
 
-tar_option_set(packages = c("data.table", "glatos", "sf", "raster", "leaflet", "mapview", "sp", "gifski"))
+tar_option_set(packages = c("data.table", "glatos", "sf", "raster", "leaflet", "mapview", "sp", "gifski", "xaringanBuilder"))
 
 list(
   tar_target(raw_vrls,
@@ -107,7 +107,6 @@ list(
              ),
 
   tar_render(LHTC_pres_2022, path = "docs/LHTC_2022.Rmd", output_dir = "docs", output_file = "index.html")
-
   
 )
 
