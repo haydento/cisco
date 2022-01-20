@@ -3,7 +3,7 @@ title: "cisco_advisory"
 output:
   xaringan::moon_reader:
     css: ["default", "../docs/cisco_advisory.css"]
-    self_contained: false
+    self_contained: TRUE
     seal: false
     nature:
       ratio: "16:9"
