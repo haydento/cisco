@@ -117,6 +117,7 @@ class: top, center
 class: top, center
 
 # Test1
+# https://stackoverflow.com/questions/43840742/how-to-embed-local-video-in-r-markdown
 
 <iframe id="video" width="570" height="470" src="../docs/tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" frameborder="0"></iframe
 
