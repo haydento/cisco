@@ -55,9 +55,9 @@ class: top, center
 .left[
 - 100 tags, tagged 42 Hessel, 7 Government Bay
 - 120 receiver array
-]
 
-.left[<img src="full_array1.png" width="70%" height="70%"/>]
+<img src="full_array1.png" width="70%" height="70%"/>
+]
 ]
 ---
 
