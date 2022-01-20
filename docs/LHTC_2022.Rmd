@@ -2,7 +2,7 @@
 title: "cisco_advisory"
 output:
   xaringan::moon_reader:
-    css: ["default", "../docs/cisco_advisory.css"]
+    css: ["default", "cisco_advisory.css"]
     self_contained: false
     seal: false
     nature:
@@ -28,17 +28,16 @@ https://github.com/yihui/xaringan/wiki
 
 ## Todd Hayden, Chris Holbrook, Dave Fielder, Kevin McDonnell, Tom Binder, Aaron Fisk
 
-.center[<img src="../data/cisco_drawing.png" width="40%" height="40%"/>]
+.center[<img src="cisco_drawing.png" width="40%" height="40%"/>]
 
 
 <div class="flex2">
-
-   <img src="../docs/MSU.png" width="10%" height="10%"/>
-   <img src="../docs/USGS.png" width="12%" height="12%"/>
-   <img src="../docs/dnr.png" width="7%" height="7%"/>
-   <img src="../docs/US-FWS-logo.png" width="6%" height="6%"/>
-   <img src="../docs/logo_transparent.png" width="10%" height="10%"/>
-   <img src="../docs/RAEONCrest_black.png" width="6%" height="6%"/>
+   <img src="MSU.png" width="10%" height="10%"/>
+   <img src="USGS.png" width="12%" height="12%"/>
+   <img src="dnr.png" width="7%" height="7%"/>
+   <img src="US-FWS-logo.png" width="6%" height="6%"/>
+   <img src="logo_transparent.png" width="10%" height="10%"/>
+   <img src="RAEONCrest_black.png" width="6%" height="6%"/>
 </div>
 
 ---
@@ -59,7 +58,7 @@ class: top, center
 ]
 
 .left[
-<img src="../docs/full_array.png" width="70%" height="70%"/>
+<img src="full_array.png" width="70%" height="70%"/>
 ]
 ]
 ---
@@ -80,8 +79,8 @@ class: top, center
 
 .left[
 <div class="flex2">
-	<img src="../docs/ice_shanty_cisco_tagging_winter.JPG" width="50%" height="50%"/>
-	<img src="../docs/inside_ice_shanty_cisco_tagging_winter.JPG" width="25%" height="25%"/>
+	<img src="ice_shanty_cisco_tagging_winter.JPG" width="50%" height="50%"/>
+	<img src="inside_ice_shanty_cisco_tagging_winter.JPG" width="25%" height="25%"/>
 </div>
 ]
 ]
@@ -106,28 +105,12 @@ class: top, center
 ]
 
 .left[
-<iframe width="570" height="470" autoplay loop muted>
-	<source src="../docs/tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
+<video width="570" height="470" autoplay loop muted>
+	<source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
 <!-- <source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/> -->
-	</iframe>
+	</video>
 ]
 ]
-
----
-
-class: top, center
-
-# Test1
-# https://stackoverflow.com/questions/43840742/how-to-embed-local-video-in-r-markdown
-
-<iframe id="video" width="570" height="470" src="../docs/tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" frameborder="0"></iframe
-
----
-
-# Test2
-
-<iframe id="video" width="570" height="470" src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" frameborder="0"></iframe
-
 
 ---
 class: top, center
@@ -148,9 +131,8 @@ class: top, center
 ]
 
 .left[
-<img src="../docs/cisco_efish_boat_LesCheneaux_cholbrook_20181108.JPG" width="65%" height="65%"/>
+<img src="cisco_efish_boat_LesCheneaux_cholbrook_20181108.JPG" width="65%" height="65%"/>
 ]
-
 ]
 
 ---
@@ -169,7 +151,7 @@ class: top, center
 ]
 
 .center[
-<img src="../output/gif/bubble_ani.gif" width="50%" height="50%"/>
+<img src="bubble_ani.gif" width="50%" height="50%"/>
 ]
 ---
 class: top, center
@@ -177,11 +159,11 @@ class: top, center
 # Depth and Temperature experience
 
 .pull-left[
-<img src="../output/grouped_boxplot_depth.png" width="100%" height="100%"/>
+<img src="grouped_boxplot_depth.png" width="100%" height="100%"/>
 ]
 
 .pull-right[
-<img src="../output/temperature_boxplot.png" width="100%" height="100%"/>
+<img src="temperature_boxplot.png" width="100%" height="100%"/>
 ]
 
 ---
@@ -200,7 +182,7 @@ class: top, center
 ]
 
 <center>
-<img src="../docs/cisco_sampling_20171114_180542.jpg", width="30%" height="30%"/>
+<img src="cisco_sampling_20171114_180542.jpg", width="30%" height="30%"/>
 </center>
 
 ---
@@ -219,16 +201,16 @@ https://github.com/yihui/xaringan/wiki
 
 ## Todd Hayden, Chris Holbrook, Tom Binder, Andrew Honsey, Roger Gordon, Kevin McDonnell, Dave Fielder, Aaron Fisk
 
-.center[<img src="../data/cisco_drawing.png" width="30%" height="30%"/>]
+.center[<img src="cisco_drawing.png" width="30%" height="30%"/>]
 
 
 <div class="flex2">
-   <img src="../docs/MSU.png" width="10%" height="10%"/>
-   <img src="../docs/USGS.png" width="12%" height="12%"/>
-   <img src="../docs/dnr.png" width="7%" height="7%"/>
-   <img src="../docs/US-FWS-logo.png" width="6%" height="6%"/>
-   <img src="../docs/logo_transparent.png" width="10%" height="10%"/>
-   <img src="../docs/RAEONCrest_black.png" width="6%" height="6%"/>
+   <img src="MSU.png" width="10%" height="10%"/>
+   <img src="USGS.png" width="12%" height="12%"/>
+   <img src="dnr.png" width="7%" height="7%"/>
+   <img src="US-FWS-logo.png" width="6%" height="6%"/>
+   <img src="logo_transparent.png" width="10%" height="10%"/>
+   <img src="RAEONCrest_black.png" width="6%" height="6%"/>
 </div>
 
 ---
@@ -285,17 +267,19 @@ class: top, center
 
 # Juvenile movements
 
-<iframe width="45%" height="45%" controls loop>
-	<source src="../output/juv_cisco.mp4" type="video/mp4"/>
+<video width="45%" height="45%" controls loop>
+	<source src="juv_cisco.mp4" type="video/mp4"/>
 		<!-- <source src="output/juv_cisco.mp4" type="video/mp4"/> -->
-			</iframe>
+			</video>
 
 ---
 class: top, center
 
 # Juvenile cisco detections and predation
 
-.center[<img src="../output/cum_dtc_pred.png" width="75%" height="75%"/>]
+.center[
+<img src="cum_dtc_pred.png" width="75%" height="75%"/>
+]
 
 ---
 class: top, center
