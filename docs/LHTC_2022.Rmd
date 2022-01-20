@@ -55,9 +55,9 @@ class: top, center
 .left[
 - 100 tags, tagged 42 Hessel, 7 Government Bay
 - 120 receiver array
-
-<img src="full_array1.png" width="70%" height="70%"/>
 ]
+
+.left[<img src="full_array1.png" width="70%" height="70%"/>]
 ]
 ---
 
@@ -73,15 +73,12 @@ class: top, center
 .right-column[
 .left[
 - tagged 39 cisco, gill nets under ice
+]
 
-
-.left[
-<div class="flex2">
+.left[<div class="flex2">
 	<img src="ice_shanty_cisco_tagging_winter.JPG" width="50%" height="50%"/>
 	<img src="inside_ice_shanty_cisco_tagging_winter.JPG" width="25%" height="25%"/>
-</div>
-]
-]
+	</div>]
 ]
 
 ---
