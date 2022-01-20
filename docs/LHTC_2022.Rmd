@@ -57,9 +57,7 @@ class: top, center
 - 120 receiver array
 ]
 
-.left[
-<img src="full_array1.png" width="70%" height="70%"/>
-]
+.left[<img src="full_array1.png" width="70%" height="70%"/>]
 ]
 ---
 
