@@ -55,12 +55,12 @@ class: top, center
 .left[
 - 100 tags, tagged 42 Hessel, 7 Government Bay
 - 120 receiver array
+
+<img src="full_array1.png" width="70%" height="70%"/>
+
+]
 ]
 
-<left>
-<img src="full_array1.png" width="70%" height="70%"/>
-</left>
-]
 ---
 
 class: top, center
@@ -75,15 +75,13 @@ class: top, center
 .right-column[
 .left[
 - tagged 39 cisco, gill nets under ice
-]
 
-<left>
 <div class="flex2">
 	<img src="ice_shanty_cisco_tagging_winter1.JPG" width="50%" height="50%"/>
 	<img src="inside_ice_shanty_cisco_tagging_winter1.JPG" width="25%" height="25%"/>
 	</div>
-</left>
 	]
+]
 
 
 ---
@@ -102,13 +100,11 @@ class: top, center
 .right-column[
 .left[
 - 100 new tags, 12 leftover, tagged 60 fish Government Bay, 9 fish Hessel
-]
 
-<left>
 <video width="570" height="470" autoplay loop muted>
 	<source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
 </video>
-</left>
+]
 ]
 
 ---
@@ -127,11 +123,10 @@ class: top, center
 .left[
 - Tagged 48, Government Bay
 - All tags in fish!
-]
 
-<left>
 <img src="cisco_efish_boat_LesCheneaux_cholbrook_201811081.JPG" width="65%" height="65%"/>
 </left>	
+	]
 ]
 
 ---
@@ -148,7 +143,7 @@ class: top, center
 - Determine timing of movement onto spawning grounds
 ]
 
-<img src="bubble_ani.gif" width="50%" height="50%"/>
+<img src="bubble_ani.gif" width="40%" height="40%"/>
 
 ---
 class: top, center
@@ -178,7 +173,7 @@ class: top, center
 
 ]
 
-<img src="cisco_sampling_20171114_180542.jpg", width="40%" height="40%"/>
+<img src="cisco_sampling_20171114_1805421.jpg", width="40%" height="40%"/>
 
 ---
 
@@ -272,7 +267,6 @@ class: top, center
 # Juvenile cisco detections and predation
 
 <img src="cum_dtc_pred.png" width="75%" height="75%"/>
-
 
 ---
 class: top, center
