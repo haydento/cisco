@@ -28,7 +28,7 @@ https://github.com/yihui/xaringan/wiki
 
 ## Todd Hayden, Chris Holbrook, Dave Fielder, Kevin McDonnell, Tom Binder, Aaron Fisk
 
-.center[<img src="cisco_drawing.png" width="40%" height="40%"/>]
+<img src="cisco_drawing.png" width="40%" height="40%"/>
 
 
 <div class="flex2">
@@ -48,7 +48,7 @@ class: top, center
 .left-column[
 .left[
 - 2019 autumn
-]
+  ]
 ]
 
 .right-column[
@@ -57,7 +57,9 @@ class: top, center
 - 120 receiver array
 ]
 
-.left[<img src="full_array1.png" width="70%" height="70%"/>]
+<left>
+<img src="full_array1.png" width="70%" height="70%"/>
+</left>
 ]
 ---
 
@@ -75,11 +77,14 @@ class: top, center
 - tagged 39 cisco, gill nets under ice
 ]
 
-.left[<div class="flex2">
-	<img src="ice_shanty_cisco_tagging_winter.JPG" width="50%" height="50%"/>
-	<img src="inside_ice_shanty_cisco_tagging_winter.JPG" width="25%" height="25%"/>
-	</div>]
-]
+<left>
+<div class="flex2">
+	<img src="ice_shanty_cisco_tagging_winter1.JPG" width="50%" height="50%"/>
+	<img src="inside_ice_shanty_cisco_tagging_winter1.JPG" width="25%" height="25%"/>
+	</div>
+</left>
+	]
+
 
 ---
 
@@ -99,12 +104,11 @@ class: top, center
 - 100 new tags, 12 leftover, tagged 60 fish Government Bay, 9 fish Hessel
 ]
 
-.left[
+<left>
 <video width="570" height="470" autoplay loop muted>
 	<source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
-<!-- <source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/> -->
-	</video>
-]
+</video>
+</left>
 ]
 
 ---
@@ -125,9 +129,9 @@ class: top, center
 - All tags in fish!
 ]
 
-.left[
-<img src="cisco_efish_boat_LesCheneaux_cholbrook_20181108.JPG" width="65%" height="65%"/>
-]
+<left>
+<img src="cisco_efish_boat_LesCheneaux_cholbrook_201811081.JPG" width="65%" height="65%"/>
+</left>	
 ]
 
 ---
@@ -142,12 +146,10 @@ class: top, center
 - Determine timing and spatial extent of post-spawning movements
 - Determine annual survival and spawning site fidelity
 - Determine timing of movement onto spawning grounds
-
 ]
 
-.center[
 <img src="bubble_ani.gif" width="50%" height="50%"/>
-]
+
 ---
 class: top, center
 
@@ -176,9 +178,7 @@ class: top, center
 
 ]
 
-<center>
-<img src="cisco_sampling_20171114_180542.jpg", width="30%" height="30%"/>
-</center>
+<img src="cisco_sampling_20171114_180542.jpg", width="40%" height="40%"/>
 
 ---
 
@@ -196,16 +196,16 @@ https://github.com/yihui/xaringan/wiki
 
 ## Todd Hayden, Chris Holbrook, Tom Binder, Andrew Honsey, Roger Gordon, Kevin McDonnell, Dave Fielder, Aaron Fisk
 
-.center[<img src="cisco_drawing.png" width="30%" height="30%"/>]
+<img src="cisco_drawing.png" width="30%" height="30%"/>
 
 
 <div class="flex2">
-   <img src="MSU.png" width="10%" height="10%"/>
-   <img src="USGS.png" width="12%" height="12%"/>
-   <img src="dnr.png" width="7%" height="7%"/>
-   <img src="US-FWS-logo.png" width="6%" height="6%"/>
-   <img src="logo_transparent.png" width="10%" height="10%"/>
-   <img src="RAEONCrest_black.png" width="6%" height="6%"/>
+   <img src="MSU1.png" width="10%" height="10%"/>
+   <img src="USGS1.png" width="12%" height="12%"/>
+   <img src="dnr1.png" width="7%" height="7%"/>
+   <img src="US-FWS-logo1.png" width="6%" height="6%"/>
+   <img src="logo_transparent1.png" width="10%" height="10%"/>
+   <img src="RAEONCrest_black1.png" width="6%" height="6%"/>
 </div>
 
 ---
@@ -264,17 +264,15 @@ class: top, center
 
 <video width="45%" height="45%" controls loop>
 	<source src="juv_cisco.mp4" type="video/mp4"/>
-		<!-- <source src="output/juv_cisco.mp4" type="video/mp4"/> -->
-			</video>
+</video>
 
 ---
 class: top, center
 
 # Juvenile cisco detections and predation
 
-.center[
 <img src="cum_dtc_pred.png" width="75%" height="75%"/>
-]
+
 
 ---
 class: top, center
