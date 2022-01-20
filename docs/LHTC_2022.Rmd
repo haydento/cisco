@@ -32,8 +32,8 @@ https://github.com/yihui/xaringan/wiki
 
 
 <div class="flex2">
-   <img src="./docs/MSU.png" width="10%" height="10%"/>
-   <img src="./docs/USGS.png" width="12%" height="12%"/>
+   <img src="MSU.png" width="10%" height="10%"/>
+   <img src="USGS.png" width="12%" height="12%"/>
    <img src="../docs/dnr.png" width="7%" height="7%"/>
    <img src="../docs/US-FWS-logo.png" width="6%" height="6%"/>
    <img src="../docs/logo_transparent.png" width="10%" height="10%"/>
