@@ -45,21 +45,17 @@ class: top, center
  
 # History
 
-.left-column[
 .left[
 - 2019 autumn
-]
+  - 100 tags
+  - tagged 42 Hessel
+  - tagged 7 Government Bay
+  - 120 receiver array
 ]
 
-.right-column[
-.left[
-- 100 tags, tagged 42 Hessel, 7 Government Bay
-- 120 receiver array
+<img src="full_array1.png" width="45%" height="45%"/>
 
 
-<img src="full_array1.png" width="70%" height="70%"/>
-]
-]
 
 ---
 
@@ -67,23 +63,17 @@ class: top, center
  
 # History
  
-.left-column[
 .left[
-- 2019 autumn
 - 2020 winter
-]
-]
-
-.right-column[
-.left[
-- tagged 39 cisco, gill nets under ice
+  - tagged 39 cisco
+  - gill nets under ice
 
 <div class="flex2">
-	<img src="ice_shanty_cisco_tagging_winter1.JPG" width="50%" height="50%"/>
-	<img src="inside_ice_shanty_cisco_tagging_winter1.JPG" width="25%" height="25%"/>
+	<img src="ice_shanty_cisco_tagging_winter1.JPG" width="40%" height="40%"/>
+	<img src="inside_ice_shanty_cisco_tagging_winter1.JPG" width="20%" height="20%"/>
 	</div>
 ]
-]
+
 
 ---
 
@@ -91,22 +81,18 @@ class: top, center
  
 # History
  
-.left-column[
 .left[
-- 2019 autumn
-- 2020 winter
 - 2020 autumn
-]
+  - 100 new tags to deploy
+  - 12 leftover
+  - tagged 60 fish Government Bay
+  - 9 fish Hessel
 ]
 
-.right-column[
-.left[
-- 100 new tags, 12 leftover, tagged 60 fish Government Bay, 9 fish Hessel
-
-<video width="570" height="470" autoplay loop muted>
+<video width="500" height="400" autoplay loop muted>
 	<source src="tagged_cisco_in_recovery_01_cholbrook_20181108.mp4" type="video/mp4"/>
 </video>
-]
+
 ]
 
 
@@ -116,24 +102,13 @@ class: top, center
  
 # History
  
-.left-column[
 .left[
-- 2019 autumn
-- 2020 winter
-- 2020 autumn
 - 2021 autumn
-]
+  - Tagged 48 Government Bay
+  - All tags in fish!
 ]
 
-.right-column[
-.left[
-- Tagged 48, Government Bay
-- All tags in fish!
-
-
-<img src="cisco_efish_boat_LesCheneaux_cholbrook_201811081.JPG" width="65%" height="65%"/>
-]
-]
+<img src="cisco_efish_boat_LesCheneaux_cholbrook_201811081.JPG" width="48%" height="48%"/>
 
 ---
 
