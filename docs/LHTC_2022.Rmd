@@ -2,7 +2,7 @@
 title: "cisco_advisory"
 output:
   xaringan::moon_reader:
-    css: ["default", "cisco_advisory.css"]
+    css: ["default", "cisco_advisory.css" ]
     self_contained: false
     seal: false
     nature:
